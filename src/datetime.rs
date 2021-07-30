@@ -1486,7 +1486,7 @@ pub mod serde {
             D: de::Deserializer<'de>,
         {
             #[allow(deprecated)]
-            Ok(try!(d.deserialize_i64(MicroSecondsTimestampVisitor)))
+            Ok(d.deserialize_i64(MicroSecondsTimestampVisitor)?)
         }
 
         struct MicroSecondsTimestampVisitor;
